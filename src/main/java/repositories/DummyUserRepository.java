@@ -29,4 +29,29 @@ public class DummyUserRepository implements UserRepository {
 		else return false;
 	}
 
+	@Override
+	public String toString() {
+		String result = "";
+		for (User user: db) {
+			result += user.toString() + "<br>";
+		}
+		return result;
+	}
+
+	public List<User> getDb() {
+		return db;
+	}
+
+	public void togglePremium(String username) {
+		int useridx = db.indexOf(getUserByUsername(username));
+		User user = db.get(useridx);
+		if (user.isPremium()) user.setPremium(false);
+		else user.setPremium(true);
+		db.set(useridx, user);
+	}
+	
+	
+	
+	
+
 }

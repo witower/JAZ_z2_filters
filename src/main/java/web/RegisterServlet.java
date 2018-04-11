@@ -32,12 +32,17 @@ public class RegisterServlet extends HttpServlet {
 		
 		HttpSession session = request.getSession();
 				
+		
 		User user = retrieveUserFromRequest(request);
 		
-		session.setAttribute("identity", user);
-		
-		repository.add(user);
-		response.sendRedirect("success.jsp");
+		if (repository.getUserByUsername(user.getUsername()) != null)
+		response.sendRedirect("/registration.jsp/?e=userAlreadyExists");
+		else if (user.getPassword().equals(request.getParameter("passconfirm"))) {
+			repository.add(user);
+			session.setAttribute("freshmeat", true);
+			response.sendRedirect("/?info=SuccessfullRegistration");
+		}
+		else response.sendRedirect("/registration.jsp/?e=passwordMismatch");
 	}
 
 

@@ -39,8 +39,13 @@ public class User {
 	}
 	@Override
 	public String toString() {
-		return "User [username=" + username + ", password=" + password + ", email=" + email + ", isPremium=" + isPremium
+		return "[username=" + username + ", password=" + password + ", email=" + email + ", isPremium=" + isPremium
 				+ ", isAdmin=" + isAdmin + "]";
+	}
+	
+	public String toColumns() {
+		return "<td>" + username + "</td><td>" + password + "</td><td>" + email + "</td><td>" + isPremium
+				+ "</td><td>" + isAdmin + "</td>";
 	}
 	
 }

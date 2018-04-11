@@ -53,7 +53,9 @@ public class LoginServlet extends HttpServlet {
 		if (repository.isAuthorized(credentials.getUsername(), credentials.getPassword())) {
 			session.setAttribute("user", credentials.getUsername());
 			session.setAttribute("isAuthorized", true);
-			response.sendRedirect("/profile");
+			session.setAttribute("isPremium", false);
+			session.setAttribute("isAdmin", false);
+			response.sendRedirect("/restricted/profile");
 		}
 		else response.sendRedirect("/?e=wrongCredentials");
 	}

@@ -13,8 +13,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-@WebFilter("/profile")
-public class ApplicationDataInSessionFilter implements Filter {
+@WebFilter({"/restricted/admin", "/restricted/admin/*"})
+public class AdminAuthFilter implements Filter {
 
 
 	@Override
@@ -24,8 +24,9 @@ public class ApplicationDataInSessionFilter implements Filter {
 		HttpServletRequest httpRequest = (HttpServletRequest) request;
 		HttpSession session = httpRequest.getSession();
 		HttpServletResponse httpResponse = (HttpServletResponse) response;
-		if((session.getAttribute("user")==null) || ((boolean)session.getAttribute("isAuthorized")==false)) {
-			httpResponse.sendRedirect("/");
+				
+		if (session.getAttribute("isAdmin")==null || session.getAttribute("isAdmin").equals(false)) {
+			httpResponse.sendRedirect("/restricted/profile/?e=adminDenied");
 			return;
 		}
 		
