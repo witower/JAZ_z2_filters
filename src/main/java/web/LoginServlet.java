@@ -46,8 +46,6 @@ public class LoginServlet extends HttpServlet {
 		
 		HttpSession session = request.getSession();
 		
-		//response.getWriter().println("loginservlethello");
-		
 		User credentials = retrieveCredentialsFromRequest(request);
 		
 		if (repository.isAuthorized(credentials.getUsername(), credentials.getPassword())) {

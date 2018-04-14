@@ -47,7 +47,6 @@ public class DummyUserRepository implements UserRepository {
 		User user = db.get(useridx);
 		if (user.isPremium()) user.setPremium(false);
 		else user.setPremium(true);
-		db.set(useridx, user);
 	}
 	
 	

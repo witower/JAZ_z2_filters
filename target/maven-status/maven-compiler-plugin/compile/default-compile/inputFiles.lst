@@ -1,7 +1,12 @@
+C:\Users\wit\Workspace\PJATK\4-JAZ\JAZ_z2_filters\src\main\java\web\filters\PremiumAuthFilter.java
+C:\Users\wit\Workspace\PJATK\4-JAZ\JAZ_z2_filters\src\main\java\web\filters\RegistrationFilter.java
 C:\Users\wit\Workspace\PJATK\4-JAZ\JAZ_z2_filters\src\main\java\web\ProfileServlet.java
 C:\Users\wit\Workspace\PJATK\4-JAZ\JAZ_z2_filters\src\main\java\domain\User.java
+C:\Users\wit\Workspace\PJATK\4-JAZ\JAZ_z2_filters\src\main\java\web\AdminServlet.java
 C:\Users\wit\Workspace\PJATK\4-JAZ\JAZ_z2_filters\src\main\java\repositories\UserRepository.java
 C:\Users\wit\Workspace\PJATK\4-JAZ\JAZ_z2_filters\src\main\java\web\RegisterServlet.java
-C:\Users\wit\Workspace\PJATK\4-JAZ\JAZ_z2_filters\src\main\java\web\filters\ApplicationDataInSessionFilter.java
+C:\Users\wit\Workspace\PJATK\4-JAZ\JAZ_z2_filters\src\main\java\web\filters\AdminAuthFilter.java
 C:\Users\wit\Workspace\PJATK\4-JAZ\JAZ_z2_filters\src\main\java\repositories\DummyUserRepository.java
 C:\Users\wit\Workspace\PJATK\4-JAZ\JAZ_z2_filters\src\main\java\web\LoginServlet.java
+C:\Users\wit\Workspace\PJATK\4-JAZ\JAZ_z2_filters\src\main\java\web\filters\GeneralAuthFilter.java
+C:\Users\wit\Workspace\PJATK\4-JAZ\JAZ_z2_filters\src\main\java\web\LogoutServlet.java

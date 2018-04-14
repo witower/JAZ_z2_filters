@@ -26,20 +26,6 @@ public class ProfileServlet extends HttpServlet {
 	
 	public void init(ServletConfig config) throws ServletException {
 		repository = new DummyUserRepository();
-//		User sample1 = new User();
-//		sample1.setUsername("user1");
-//		sample1.setPassword("pass");
-//		repository.add(sample1);
-//		User sample2 = new User();
-//		sample2.setUsername("premium1");
-//		sample2.setPassword("premium");
-//		sample2.setPremium(true);
-//		repository.add(sample2);
-//		User sample3 = new User();
-//		sample3.setUsername("admin1");
-//		sample3.setPassword("admin");
-//		sample3.setAdmin(true);
-//		repository.add(sample3);
 	}
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException	{
@@ -56,20 +42,17 @@ public class ProfileServlet extends HttpServlet {
 		String premiumBody = "";
 		String adminBody = "";
 		
-		
-		
-		if (user.isPremium()) 
-			premiumBody += "<h1>Howdy Premium User!</h1>"
-					+ "<p><a href=\"premium.jsp\">Checkout your Premium stuff!</a></p>";
-		
 		if (user.isAdmin()) 
 			adminBody += "<h1>Howdy Admin Allmighty!</h1>"
 					+ "<p><a href=\"premium.jsp\">Checkout your Premium stuff!</a></p>"
 					+ "<p><a href=\"admin\">Checkout your admin console!</a></p>";
+		else if (user.isPremium()) 
+			premiumBody += "<h1>Howdy Premium User!</h1>"
+					+ "<p><a href=\"premium.jsp\">Checkout your Premium stuff!</a></p>";
 		
 		String htmlBody = profileBody + premiumBody + adminBody;
 		
-		htmlBody += "<p><a style='display:button' href='/logout'>Wyloguj się.</a></p>";
+		htmlBody += "<p><a style='display:button' href='/logout'>Log out.</a></p>";
 		
 		response.setContentType("text/html; charset=UTF-8");
 		response.setCharacterEncoding("UTF-8");
